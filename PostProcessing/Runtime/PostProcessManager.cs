@@ -152,7 +152,7 @@ namespace UnityEngine.Rendering.PostProcessing
         public PostProcessVolume GetHighestPriorityVolume(PostProcessLayer layer)
         {
             if (layer == null)
-                throw new ArgumentNullException("layer");
+                throw new ArgumentNullException(nameof(layer));
 
             return GetHighestPriorityVolume(layer.volumeLayer);
         }
