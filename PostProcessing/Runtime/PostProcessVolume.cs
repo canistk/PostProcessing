@@ -52,7 +52,7 @@ namespace UnityEngine.Rendering.PostProcessing
     //
 
     [ExecuteInEditMode]
-    [AddComponentMenu("Rendering/Post-process Volume", 1001)]
+    [AddComponentMenu("Rendering/Post-process Volume", 101)]
     public sealed class PostProcessVolume : MonoBehaviour
     {
         // Modifying sharedProfile will change the behavior of all volumes using this profile, and
@@ -61,13 +61,13 @@ namespace UnityEngine.Rendering.PostProcessing
 
         [Tooltip("A global volume is applied to the whole scene.")]
         public bool isGlobal = false;
-        
+
         [Min(0f), Tooltip("Outer distance to start blending from. A value of 0 means no blending and the volume overrides will be applied immediatly upon entry.")]
         public float blendDistance = 0f;
 
         [Range(0f, 1f), Tooltip("Total weight of this volume in the scene. 0 means it won't do anything, 1 means full effect.")]
         public float weight = 1f;
-        
+
         [Tooltip("Volume priority in the stack. Higher number means higher priority. Negative values are supported.")]
         public float priority = 0f;
 
@@ -165,7 +165,7 @@ namespace UnityEngine.Rendering.PostProcessing
 
             if (isGlobal || colliders == null)
                 return;
-            
+
 #if UNITY_EDITOR
             // Can't access the UnityEditor.Rendering.PostProcessing namespace from here, so
             // we'll get the preferred color manually
